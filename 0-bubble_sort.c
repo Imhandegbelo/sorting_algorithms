@@ -1,6 +1,22 @@
 #include "sort.h"
 
 /**
+ * swap - swaps two array elements
+ * @xp: pointer to first element
+ * @yp: pointer to second element
+ */
+
+void swap(int *xp, int *yp)
+{
+	int temp;
+
+	temp = *xp;
+	*xp = *yp;
+	*yp = temp;
+}
+
+
+/**
  * bubble_sort - Sorts array of integers in ascending order
  * @array: the array to be sorted
  * @size: size of the array
@@ -20,10 +36,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j] > array[j + 1])
 			{
-				temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-				swapped = 0;
+				swap(&array[j], &array[j + 1]);
 				print_array(array, size);
 			}
 		}
